@@ -6,7 +6,7 @@ For image examples:
 
 ![input2](./input/out_of_focus0607.jpg) ![output2](./output/out_of_focus0607.png)
 
-This repository contains a test code and sythetic dataset, which consists of scenes including motion and defocus blurs together in each scene for reproduce.
+This repository contains a test code and sythetic dataset, which consists of scenes including motion and defocus blurs together in each scene.
 
 --------------------------
 
@@ -14,10 +14,10 @@ This repository contains a test code and sythetic dataset, which consists of sce
 - Ubuntu 16.04
 - Tensorflow 1.6.0 or higher
 - Tensorlayer 1.8.2 or higher
-- Opencv2
+- OpenCV2
 
 ## Test Details
-- download a model weights from [google drive](https://drive.google.com/open?id=1gaUmaZttnXB9Ya1JmM7jOsUeUeSPIvVj) and save the model into 'model' folder.
+- download [model weights](https://drive.google.com/open?id=1gaUmaZttnXB9Ya1JmM7jOsUeUeSPIvVj) from google drive and save the model into 'model' folder.
 - specify a path of input folder in 'main.py' at line #39
 - run 'main.py'
 
@@ -25,5 +25,5 @@ This repository contains a test code and sythetic dataset, which consists of sce
 python main.py
 ```
 ## Synthetic Dataset
-- download [synthetic train set](https://drive.google.com/open?id=1LPaHkuQXziBWqEsM4cIwzzkcLxbupID1)(337MB) and [synthetic test set](https://drive.google.com/open?id=1wEhXlvq1wHO05HjtbDXDqnGu2q-ZFEsQ)(11.5MB)
-- Note that sharp pixels, defocus-blurred pixels, and motion-blurred pixels are labeled as 0, 100, and 200 in the [0,255] range.
+- download [synthetic train set](https://drive.google.com/open?id=1LPaHkuQXziBWqEsM4cIwzzkcLxbupID1)(337MB) and [synthetic test set](https://drive.google.com/open?id=1wEhXlvq1wHO05HjtbDXDqnGu2q-ZFEsQ)(11.5MB) from google drive
+- Note that sharp pixels, motion-blurred pixels, and defocus-blurred pixels in GT blur maps are labeled as 0, 100, and 200, respectively, in the [0,255] range.
