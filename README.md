@@ -16,6 +16,10 @@ This repository contains a test code and sythetic dataset, which consists of sce
 - Tensorlayer 1.8.2
 - OpenCV2
 
+## Train Details
+- We used [CUHK blur detection dataset](http://www.cse.cuhk.edu.hk/~leojia/projects/dblurdetect/dataset.html) for training our network and generating our synthetic dataset
+- Train and test set lists are uploaded in 'dataset' folder
+
 ## Test Details
 - download [model weights](https://drive.google.com/open?id=1gaUmaZttnXB9Ya1JmM7jOsUeUeSPIvVj) from google drive and save the model into 'model' folder.
 - specify a path of input folder in 'main.py' at line #39
