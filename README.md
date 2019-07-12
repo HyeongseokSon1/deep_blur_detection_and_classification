@@ -10,10 +10,10 @@ This repository contains a test code and sythetic dataset, which consists of sce
 
 --------------------------
 
-## Prerequisites
+## Prerequisites (tested)
 - Ubuntu 16.04
-- Tensorflow 1.6.0 or higher
-- Tensorlayer 1.8.2 or higher
+- Tensorflow 1.6.0 (<= 1.9.0)
+- Tensorlayer 1.8.2
 - OpenCV2
 
 ## Test Details
