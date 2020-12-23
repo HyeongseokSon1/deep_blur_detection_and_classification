@@ -21,7 +21,7 @@ This repository contains a test code and sythetic dataset, which consists of sce
 - Train and test set lists are uploaded in 'dataset' folder
 
 ## Test Details
-- download [model weights](https://drive.google.com/open?id=1gaUmaZttnXB9Ya1JmM7jOsUeUeSPIvVj) from google drive and save the model into 'model' folder.
+- download [model weights](https://drive.google.com/file/d/11FBVmAIfeHDHpOjLXewzpA2lgcOOqo2_/view?usp=sharing) from google drive and save the model into 'model' folder.
 - specify a path of input folder in 'main.py' at line #39
 - run 'main.py'
 
@@ -29,5 +29,5 @@ This repository contains a test code and sythetic dataset, which consists of sce
 python main.py
 ```
 ## Synthetic Dataset
-- download [synthetic train set](https://drive.google.com/open?id=1LPaHkuQXziBWqEsM4cIwzzkcLxbupID1)(337MB) and [synthetic test set](https://drive.google.com/open?id=1wEhXlvq1wHO05HjtbDXDqnGu2q-ZFEsQ)(11.5MB) from google drive
+- download [synthetic train set](https://drive.google.com/file/d/1QUygL2nalHldcJMwFJPfPFWokMoIbI9L/view?usp=sharing)(337MB) and [synthetic test set](https://drive.google.com/file/d/1-lV3CS_6rI_by6StkGQYsdn0SeOxwepu/view?usp=sharing)(11.5MB) from google drive
 - Note that sharp pixels, motion-blurred pixels, and defocus-blurred pixels in GT blur maps are labeled as 0, 100, and 200, respectively, in the [0,255] range.
