@@ -19,6 +19,7 @@ This repository contains a test code and sythetic dataset, which consists of sce
 ## Train Details
 - We used [CUHK blur detection dataset](http://www.cse.cuhk.edu.hk/~leojia/projects/dblurdetect/dataset.html) for training our network and generating our synthetic dataset
 - Train and test set lists are uploaded in 'dataset' folder
+- Need to modify some options and paths in 'main.py' and 'config.py' for training
 
 ## Test Details
 - download [model weights](https://drive.google.com/file/d/11FBVmAIfeHDHpOjLXewzpA2lgcOOqo2_/view?usp=sharing) from google drive and save the model into 'model' folder.
