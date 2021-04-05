@@ -49,7 +49,7 @@ def UNet(t_image, is_train=False, reuse=False, scope = "UNet"):
         n = Conv2d(n, 512, (3, 3), (1, 1), act=None, padding='SAME', W_init=w_init4, name='d3/c4')
         n = BatchNormLayer(n, act=tf.nn.relu, is_train=is_train, gamma_init=g_init, name='d3/b4')
 
-        n = DeConv2d(n, 256, (3, 3), (hrg/4, wrg/4), (2, 2), act=None, padding='SAME', W_init=w_init3, name='u3/d')
+        n = DeConv2d(n, 256, (3, 3), (hrg//4, wrg//4), (2, 2), act=None, padding='SAME', W_init=w_init3, name='u3/d')
         n = BatchNormLayer(n, is_train=is_train, gamma_init=g_init, name='u3/b')
         n = ElementwiseLayer([n, f2_3], tf.add, name='s4')
         # n = InputLayer(tf.nn.relu(n.outputs), name='relu4')
@@ -61,7 +61,7 @@ def UNet(t_image, is_train=False, reuse=False, scope = "UNet"):
         n = Conv2d(n, 256, (3, 3), (1, 1), act=None, padding='SAME', W_init=w_init3, name='u3/c3')
         n = BatchNormLayer(n, act=tf.nn.relu, is_train=is_train, gamma_init=g_init, name='u3/b3')
 
-        n = DeConv2d(n, 128, (3, 3), (hrg/2, wrg/2), (2, 2), act=None, padding='SAME', W_init=w_init2, name='u2/d')
+        n = DeConv2d(n, 128, (3, 3), (hrg//2, wrg//2), (2, 2), act=None, padding='SAME', W_init=w_init2, name='u2/d')
         n = BatchNormLayer(n, is_train=is_train, gamma_init=g_init, name='u2/b')
         n = ElementwiseLayer([n, f1_2], tf.add, name='s3')
         # n = InputLayer(tf.nn.relu(n.outputs), name='relu3')
@@ -128,7 +128,7 @@ def UNet_(t_image, is_train=False, reuse=False, scope = "UNet"):
         n = Conv2d(n, 512, (3, 3), (1, 1), act=None, padding='SAME', W_init=w_init4, name='d3/c4')
         n = BatchNormLayer(n, act=tf.nn.relu, is_train=is_train, gamma_init=g_init, name='d3/b4')
 
-        n = DeConv2d(n, 256, (3, 3), (hrg/4, wrg/4), (2, 2), act=None, padding='SAME', W_init=w_init3, name='u3/d')
+        n = DeConv2d(n, 256, (3, 3), (hrg//4, wrg//4), (2, 2), act=None, padding='SAME', W_init=w_init3, name='u3/d')
         n = BatchNormLayer(n, is_train=is_train, gamma_init=g_init, name='u3/b')
         n = ElementwiseLayer([n, f2_3], tf.add, name='s4')
         # n = InputLayer(tf.nn.relu(n.outputs), name='relu4')
@@ -140,7 +140,7 @@ def UNet_(t_image, is_train=False, reuse=False, scope = "UNet"):
         n = Conv2d(n, 256, (3, 3), (1, 1), act=None, padding='SAME', W_init=w_init3, name='u3/c3')
         n = BatchNormLayer(n, act=tf.nn.relu, is_train=is_train, gamma_init=g_init, name='u3/b3')
 
-        n = DeConv2d(n, 128, (3, 3), (hrg/2, wrg/2), (2, 2), act=None, padding='SAME', W_init=w_init2, name='u2/d')
+        n = DeConv2d(n, 128, (3, 3), (hrg//2, wrg//2), (2, 2), act=None, padding='SAME', W_init=w_init2, name='u2/d')
         n = BatchNormLayer(n, is_train=is_train, gamma_init=g_init, name='u2/b')
         n = ElementwiseLayer([n, f1_2], tf.add, name='s3')
         # n = InputLayer(tf.nn.relu(n.outputs), name='relu3')
@@ -337,7 +337,7 @@ def Decoder_Network_classification(n,f0,f1_2,f2_3,f3_4,hrg,wrg, reuse=False, sco
     with tf.variable_scope(scope, reuse=reuse) as vs:
 
         #this bug..... w_init3->w_init4
-        n = DeConv2d(n, 512, (3, 3), (hrg / 8, wrg / 8), (2, 2), act=None, padding='SAME', W_init=w_init4,
+        n = DeConv2d(n, 512, (3, 3), (hrg // 8, wrg // 8), (2, 2), act=None, padding='SAME', W_init=w_init4,
                      name='u4/d')
         # n = BatchNormLayer(n, is_train=is_train, gamma_init=g_init, name='u3/b')
         # n.outputs = tf.nn.relu(n.outputs)
@@ -356,7 +356,7 @@ def Decoder_Network_classification(n,f0,f1_2,f2_3,f3_4,hrg,wrg, reuse=False, sco
         # n.outputs = tf.nn.relu(n.outputs)
         n_m3 = Conv2d(n, 3, (1, 1), (1, 1), act=None, padding='SAME', W_init=w_init4, name='u4/loss3')
 
-        n = DeConv2d(n, 256, (3, 3), (hrg / 4, wrg / 4), (2, 2), act=None, padding='SAME', W_init=w_init3,
+        n = DeConv2d(n, 256, (3, 3), (hrg // 4, wrg // 4), (2, 2), act=None, padding='SAME', W_init=w_init3,
                      name='u3/d')
         # n = BatchNormLayer(n, is_train=is_train, gamma_init=g_init, name='u3/b')
         f2_3 = Conv2d(f2_3, 256, (1, 1), (1, 1), act=None, padding='SAME', W_init=w_init3, name='f2_3/c1')
@@ -374,7 +374,7 @@ def Decoder_Network_classification(n,f0,f1_2,f2_3,f3_4,hrg,wrg, reuse=False, sco
         # n.outputs = tf.nn.relu(n.outputs)
         n_m2 = Conv2d(n,3, (1, 1), (1, 1), act=None, padding='SAME', W_init=w_init3, name='u3/loss2')
 
-        n = DeConv2d(n, 128, (3, 3), (hrg / 2, wrg / 2), (2, 2), act=None, padding='SAME', W_init=w_init2,
+        n = DeConv2d(n, 128, (3, 3), (hrg // 2, wrg // 2), (2, 2), act=None, padding='SAME', W_init=w_init2,
                      name='u2/d')
         # n = BatchNormLayer(n, is_train=is_train, gamma_init=g_init, name='u2/b')
         # n.outputs = tf.nn.relu(n.outputs)
@@ -425,7 +425,7 @@ def Decoder_Network_classification(n,f0,f1_2,f2_3,f3_4,hrg,wrg, reuse=False, sco
     with tf.variable_scope(scope, reuse=reuse) as vs:
 
         #this bug..... w_init3->w_init4
-        n = DeConv2d(n, 512, (3, 3), (hrg / 8, wrg / 8), (2, 2), act=None, padding='SAME', W_init=w_init4,
+        n = DeConv2d(n, 512, (3, 3), (hrg // 8, wrg // 8), (2, 2), act=None, padding='SAME', W_init=w_init4,
                      name='u4/d')
         # n = BatchNormLayer(n, is_train=is_train, gamma_init=g_init, name='u3/b')
         # n.outputs = tf.nn.relu(n.outputs)
@@ -444,7 +444,7 @@ def Decoder_Network_classification(n,f0,f1_2,f2_3,f3_4,hrg,wrg, reuse=False, sco
         # n.outputs = tf.nn.relu(n.outputs)
         n_m3 = Conv2d(n, 3, (1, 1), (1, 1), act=None, padding='SAME', W_init=w_init4, name='u4/loss3')
 
-        n = DeConv2d(n, 256, (3, 3), (hrg / 4, wrg / 4), (2, 2), act=None, padding='SAME', W_init=w_init3,
+        n = DeConv2d(n, 256, (3, 3), (hrg // 4, wrg // 4), (2, 2), act=None, padding='SAME', W_init=w_init3,
                      name='u3/d')
         # n = BatchNormLayer(n, is_train=is_train, gamma_init=g_init, name='u3/b')
         f2_3 = Conv2d(f2_3, 256, (1, 1), (1, 1), act=None, padding='SAME', W_init=w_init3, name='f2_3/c1')
@@ -462,7 +462,7 @@ def Decoder_Network_classification(n,f0,f1_2,f2_3,f3_4,hrg,wrg, reuse=False, sco
         # n.outputs = tf.nn.relu(n.outputs)
         n_m2 = Conv2d(n,3, (1, 1), (1, 1), act=None, padding='SAME', W_init=w_init3, name='u3/loss2')
 
-        n = DeConv2d(n, 128, (3, 3), (hrg / 2, wrg / 2), (2, 2), act=None, padding='SAME', W_init=w_init2,
+        n = DeConv2d(n, 128, (3, 3), (hrg // 2, wrg // 2), (2, 2), act=None, padding='SAME', W_init=w_init2,
                      name='u2/d')
         # n = BatchNormLayer(n, is_train=is_train, gamma_init=g_init, name='u2/b')
         # n.outputs = tf.nn.relu(n.outputs)
