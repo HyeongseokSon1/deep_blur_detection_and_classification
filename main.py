@@ -571,7 +571,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
 
     parser.add_argument('--mode', type=str, default='PG_CUHK', help='model name')
-    parser.add_argument('--is_train', type=str , default='true', help='whether train or not')
+    parser.add_argument('--is_train', type=str , default='false', help='whether train or not')
     parser.add_argument('--index', type=int, default='0', help='index range 50')
 
 
@@ -582,7 +582,7 @@ if __name__ == '__main__':
 
     if tl.global_flag['is_train']:
         train_with_CUHK()
-        # train_with_synthetic()
+        # train_with_synthetic() # train with the CUHK dataset frist and then finetune with the synthetic dataset
     else:       
         blurmap_3classes(args.index) #pg test
        
